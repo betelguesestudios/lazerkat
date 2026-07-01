@@ -81,7 +81,8 @@
             const now = new Date().getTime();
             const diff = now - startdate;
             const yearselapsed = diff / msperyear;
-            document.getElementById("timer").innerHTML = yearselapsed.toFixed(8);
+            document.getElementById("timer").innerHTML = yearselapsed.toFixed(1);
+            document.getElementById("days").innerHTML = (365 * yearselapsed).toFixed(0);
         }
         setInterval(updatetimer, 50)
         updatetimer()
@@ -203,11 +204,18 @@
         <h3>I like</h3>
         <ul>
             <li>Coding</li>
+            <li>HTML</li>
+            <li>Python</li>
+            <li>JS</li>
+            <li>CSS</li>
+            <li></li>
             <li>Hardware (sort of)</li>
             <li>Lasers</li>
             <li>Light</li>
             <li>Sound (I own 6 speakers)</li>
             <li>Radio things</li>
+            <li>open source</li>
+            <li>archival</li>
             <li>BOATS</li>
             <li>Bass</li>
             <li>sort of guitar</li>
@@ -251,8 +259,54 @@
         <summary style="font-size: 24px;">Journaling</summary>
         <p>At home, I have a journal where I write a page a day.</p>
         <p>I have been doing this for <div id="timer">Loading..</div></p>
-        <p>years! yes it looks fast but its true!</p>
-        <p>ig with decimals it looks fast..</p>
+        <p>years! with almost no skips!</p>
+        <p>in other words, thats <div id="days">Loading..</div></p>
+        <p>pages! (or days)</p>
+        <p>which is nuts.</p>
+        <p>and the numbers are live btw</p>
         <p>In my journal, i write a whole pages worth of text, then when i get up in the morning, i write about my dreams! The dream journal is in a doc so again, <a href="mailto:lazerkato.o@gmail.com">contact me</a> at lazerkato.o@gmail.com if you want access to it.</p>
+        <p>I really enjoy just the idea of contributing to something large. There is just something about adding files to a drive, writing pages, archiving all of the pages in my room and other things that involve contribution that makes me really happy!</p>
+        <p>in case you couldn't tell already i love open source things</p>
+    </details>
+    <details>
+        <summary style="font-size: 24px;">Education</summary>
+        <p>Schools and programs i have learnt coding at</p>
+        <ul>
+            <li>Wellington High School (best school)</li>
+            <li>Code Camp at queen margaret college (w)</li>
+            <li>StarDance Challenge (very learn)</li>
+            <li>Code Club at WHS (w mr barrow)</li>
+            <li>sElF lEaRnInG oMg</li>
+        </ul>
+        <p>yes i am educate</p>
+    </details>
+    <details>
+        <summary style="font-size: 24px;">Tools</summary>
+        <p>Here are the tools i have access to within my home</p>
+        <ul>
+            <li>Computer (ThinkPad T430)</li>
+            <li>Computer (Custom Made but not working rn)</li>
+            <li>Monitor (Basic LG one)</li>
+            <li>3D Printer (not-willem (cool-pancakes)'s but I can use it)</li>
+            <li>Digital Caliper (again not mine)</li>
+            <li>B&W Printer (mine but not color pls give me color)</li>
+            <li>Server (132GB RAM, 32 CPUs, 6TB Storage, but very power consuming so i cant run it too often)</li>
+            <li>1080p Camera (Logitech)</li>
+            <li>RGB Mouse (Logitech)</li>
+            <li>RGB Keyboard (found at an op shop)</li>
+            <li>food</li>
+            <li>water</li>
+            <li>AliExpress (for parts)</li>
+            <li>A little container we 3d printed (to store parts)</li>
+        </ul>
+    </details>
+    <details>
+        <summary style="font-size: 24px;">Contacts</summary>
+        <p>In case the email wasn't enough, here are my contacts</p>
+        <a href="https://github.com/betelguesestudios">Github</a>
+        <br></br>
+        <a href="https://github.com/lazerkatsweirdstuff">Github Main acc (if i ever get it back because stinky github support wont reply)</a>
+        <br></br>
+        <a href="mailto:lazerkato.o@gmail.com">lazerkato.o@gmail.com</a>
     </details>
 </body>
