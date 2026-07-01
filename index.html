@@ -74,6 +74,18 @@
 			cursor: pointer
         }
     </style>
+    <script>
+        const startdate = new Date(2025, 4, 4, 0, 0, 0).getTime();
+        const msperyear = 1000 * 60 * 60 * 24 * 365.25;
+        function updatetimer() {
+            const now = new Date().getTime();
+            const diff = now - startdate;
+            const yearselapsed = diff / msperyear;
+            document.getElementById("timer").innerHTML = yearselapsed.toFixed(8);
+        }
+        setInterval(updatetimer, 50)
+        updatetimer()
+    </script>
 </head>
 <body>
     <strong><h1>LazerKat</h1></strong>
@@ -234,5 +246,11 @@
         <p>i just noticed the light bit in the corner</p>
         <p>that happened because i rendered it without the back wall</p>
         <p>whoops</p>
+    </details>
+    <details>
+        <summary style="font-size: 24px;">Journaling</summary>
+        <p>At home, I have a journal where I write a page a day.</p>
+        <p>I have been doing this for <div id="timer">Loading..</div></p>
+        <p>years! yes it looks fast but its true!</p>
     </details>
 </body>
