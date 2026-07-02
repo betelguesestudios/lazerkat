@@ -54,6 +54,7 @@
         }
         body{
             background-color: lightgoldenrodyellow;
+            color: #000000;
         }
         button{
             text-align: center;
@@ -77,6 +78,33 @@
     <script>
         const startdate = new Date(2025, 4, 4, 0, 0, 0).getTime();
         const msperyear = 1000 * 60 * 60 * 24 * 365.25;
+        const elemp = document.getElementsByName("p")
+        let thing = 0
+        function dothedark() {
+            if (thing == 0) {
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+                document.querySelectorAll("p").forEach((paragraph) => {
+                    paragraph.style.color = "white";
+                });
+                thing = 1;
+            } else {
+                document.body.style.backgroundColor = "lightgoldenrodyellow";
+                document.body.style.color = "#000000";
+                document.querySelectorAll("p").forEach((paragraph) => {
+                    paragraph.style.color = "#000000";
+                });
+                thing = 0;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const darkmodebutton = document.getElementById("dark");
+            if (darkmodebutton) {
+                darkmodebutton.addEventListener("click", dothedark);
+            }
+        });
+
         function updatetimer() {
             const now = new Date().getTime();
             const diff = now - startdate;
@@ -84,14 +112,15 @@
             document.getElementById("timer").innerHTML = yearselapsed.toFixed(1);
             document.getElementById("days").innerHTML = (365 * yearselapsed).toFixed(0);
         }
-        setInterval(updatetimer, 50)
-        updatetimer()
+        setInterval(updatetimer, 50);
+        updatetimer();
     </script>
 </head>
 <body>
     <strong><h1>LazerKat</h1></strong>
     <p>This is the page of lazerkat</p>
     <p onclick="window.open('http://cbsouthmetro.ddns.net:8080/mjpg/video.mjpg?timestamp=1782785412054', '_blank');">(this is a portfolio btw)</p>
+    <p><button id="dark">Dark Mode</button></p>
     <details>
     <summary style="font-size: 24px;">CAT (commonly asked things)</summary>
         <details>
