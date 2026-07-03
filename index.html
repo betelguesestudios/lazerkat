@@ -1,9 +1,8 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <html lang="en"></html>
     <meta name="description" content="LazerKat's Website containing a few things!">
     <title>LazerKat's Page</title>
-    <lang></lang>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Recursive:wght@300..1000&display=swap" rel="stylesheet">
@@ -74,27 +73,77 @@
 			padding: 15px 15px;
 			cursor: pointer
         }
+        @keyframes shakering {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+        .shakery {
+            display: inline-block;
+            animation: shakering 0.5s infinite;
+        }
     </style>
     <script>
         const startdate = new Date(2025, 4, 4, 0, 0, 0).getTime();
         const msperyear = 1000 * 60 * 60 * 24 * 365.25;
         const elemp = document.getElementsByName("p")
         let thing = 0
+        let stober = 0
+        let strobeInterval = null
         function dothedark() {
             if (thing == 0) {
                 document.body.style.backgroundColor = "black";
-                document.body.style.color = "white";
+                document.body.style.color = "lightgoldenrodyellow";
                 document.querySelectorAll("p").forEach((paragraph) => {
-                    paragraph.style.color = "white";
+                    paragraph.style.color = "lightgoldenrodyellow";
                 });
+                document.getElementById("dark").innerHTML = ("Light Mode")
                 thing = 1;
             } else {
                 document.body.style.backgroundColor = "lightgoldenrodyellow";
-                document.body.style.color = "#000000";
+                document.body.style.color = "black";
                 document.querySelectorAll("p").forEach((paragraph) => {
-                    paragraph.style.color = "#000000";
+                    paragraph.style.color = "black";
                 });
                 thing = 0;
+                document.getElementById("dark").innerHTML = ("Dark Mode")
+            }
+        }
+        function strobery() {
+            if (stober == 0) {
+                stober = 1;
+                document.getElementById("strobe").innerHTML = ("Stop Strobe Mode")
+                strobeInterval = setInterval(() => {
+                    document.body.style.backgroundColor = document.body.style.backgroundColor === "black" ? "lightgoldenrodyellow" : "black";
+                    document.body.style.color = document.body.style.color === "lightgoldenrodyellow" ? "black" : "lightgoldenrodyellow";
+                    document.querySelectorAll("p").forEach((paragraph) => {
+                        paragraph.style.color = paragraph.style.color === "lightgoldenrodyellow" ? "black" : "lightgoldenrodyellow";
+                    });
+                }, 1);
+            } else {
+                clearInterval(strobeInterval);
+                document.body.style.backgroundColor = "lightgoldenrodyellow";
+                document.body.style.color = "black";
+                document.querySelectorAll("p").forEach((paragraph) => {
+                    paragraph.style.color = "black";
+                });
+                stober = 0;
+                document.getElementById("strobe").innerHTML = ("Start Strobe Mode (Epilepsy Warning)")
+            }
+        }
+
+        function shakeyey() {
+            const arrow = document.getElementById("shakilini");
+            if (arrow) {
+                arrow.textContent = arrow.textContent === '▶' ? '▼' : '▶';
             }
         }
 
@@ -102,6 +151,20 @@
             const darkmodebutton = document.getElementById("dark");
             if (darkmodebutton) {
                 darkmodebutton.addEventListener("click", dothedark);
+            }
+            const strobey = document.getElementById("strobe");
+            if (strobey) {
+                strobey.addEventListener("click", strobery);
+            }
+            const jobsSummary = document.getElementById("shakery");
+            if (jobsSummary && jobsSummary.parentElement && jobsSummary.parentElement.tagName === "DETAILS") {
+                const jobsDetails = jobsSummary.parentElement;
+                jobsDetails.addEventListener("toggle", () => {
+                    const arrow = document.getElementById("shakilini");
+                    if (arrow) {
+                        arrow.textContent = jobsDetails.open ? '▼' : '▶';
+                    }
+                });
             }
         });
 
@@ -121,6 +184,7 @@
     <p>This is the page of lazerkat</p>
     <p onclick="window.open('http://cbsouthmetro.ddns.net:8080/mjpg/video.mjpg?timestamp=1782785412054', '_blank');">(this is a portfolio btw)</p>
     <p><button id="dark">Dark Mode</button></p>
+    <p><button id="strobe">Start Strobe Mode (Epilepsy Warning)</button></p>
     <details>
     <summary style="font-size: 24px;">CAT (commonly asked things)</summary>
         <details>
@@ -204,8 +268,20 @@
             <p>idk</p>
         </details>
         <details>
+            <summary>why are you called lazerkat?</summary>
+            <p>its a name i made up yay</p>
+        </details>
+        <details>
             <summary>w</summary>
             <p>yes</p>
+        </details>
+        <details>
+            <summary>why do you hide args in some of your projects?</summary>
+            <p>normally just to make it funner for myself to make, as i easily get distracted from projects. I am doing really well with keeping on top of this website though!</p>
+        </details>
+        <details>
+            <summary>what is your favourite color?</summary>
+            <p>orange! but light golden rod yellow is good as well. light golden rod yellow is the main color of this page because orange looked to over the top</p>
         </details>
     </details>
     <details>
@@ -374,4 +450,32 @@
         <br></br>
         <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1ELg7PIxcfA1u2kbAseJ7kKqSm2wrlS63FUWr9UlkydQ/edit?usp=sharing">Story me and egghead made back in 2021 lol</a>
     </details>
+    <details>
+        <summary style="font-size: 24px;">Gaming</summary>
+        <p>I don't really play games that often. I mostly focus on coding, but when i do, its normally with my friends because i am NOT a chud (although i have spent a ton of hours on this website lol)</p>
+        <p>The video games I play are:</p>
+        <ul>
+            <li>Minecraft (LazerKatTheGreat)</li>
+            <li>Roblox (lazerkato_o but not too often)</li>
+            <li>Windows 3D Pinball (peak)</li>
+            <li>Doom (the original)</li>
+            <li>SpaceFlight Sim</li>
+        </ul>
+        <p>yeah thats about it..</p>
+        <p>i dont play that many games</p>
+    </details>
+    <details>
+        <summary style="font-size: 24px;">RenderLight Studios</summary>
+        <p>RenderLight Studios is a sort of company that I made which makes animations sometimes, but mostly is known for the server, with like 200+ people as of typing. I do not check it as often as I used to, so the occasional spammer appears, and idk if the verification bot I installed even works, but you can join it <a target="_blank" rel="noopener noreferrer" href="https://renderlight-studios.github.io/renderlight/">here.</a></p>
+        <p>I won't go into too much detail here as most of the info about it is on the website so i reccomend that you check that out</p>
+    </details>
+    <details>
+        <summary id="shakery" class="shakery" style="font-size: 24px;"><a id="shakilini" style="font-size: 19px;">▶</a> JOBS</summary>
+        <p>I have not had too many jobs.</p>
+        <p>please read this the shake effect took far too long im crine</p>
+        <p>I am still chudmaxxing so I do not have any jobs. I suppose stardance could count, because I did just buy a smart watch.. I am mostly on the lookout for jobs right now. If you are an employer or something, please contact me! I would love a coding job :) i might be a bit young tho........</p>
+        <p>I'll probably stick to stardance or any other things that hack club make or other competitions for now.</p>
+        <p>i love stardance btw</p>
+    </details>
 </body>
+</html>
