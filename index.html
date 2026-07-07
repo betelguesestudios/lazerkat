@@ -96,6 +96,7 @@
         const startdate = new Date(2025, 4, 4, 0, 0, 0).getTime();
         const msperyear = 1000 * 60 * 60 * 24 * 365.25;
         const elemp = document.getElementsByName("p")
+        let invert = null;
         let thing = 0
         let stober = 0
         let strobeInterval = null
@@ -107,6 +108,7 @@
                     paragraph.style.color = "lightgoldenrodyellow";
                 });
                 document.getElementById("dark").innerHTML = ("Light Mode")
+                if (invert) invert.style.color = "black"
                 thing = 1;
             } else {
                 document.body.style.backgroundColor = "lightgoldenrodyellow";
@@ -115,6 +117,7 @@
                     paragraph.style.color = "black";
                 });
                 thing = 0;
+                if (invert) invert.style.color = "lightgoldenrodyellow"
                 document.getElementById("dark").innerHTML = ("Dark Mode")
             }
         }
@@ -167,6 +170,7 @@
                     }
                 });
             }
+            invert = document.getElementById("invert");
         });
 
         function updatetimer() {
@@ -597,12 +601,34 @@
         <p>the only problem is that in nz, you can't import custom dna without a permit</p>
         <p>why does everything i enjoy cost a permit?!</p>
         <p>but if i somehow get into massey university</p>
-        <p>i can use their licsence</p>
+        <p>i can use their licence</p>
         <p>so i think</p>
         <p>i'll write <a href="https://docs.google.com/document/d/1ERd32QxMPLLMPs46YxGR23npNV3d9H9OvvrzaYK1kvo/edit?usp=sharing">a paper</a></p>
         <p>and get into massey</p>
         <p>and yes i made that fancy name</p>
         <p>im so sigma</p>
+    </details>
+    <details>
+        <summary style="font-size: 24px;">My thoughts on AI</summary>
+        <p>I think that AI can sometimes be good, but it is usually bad.</p>
+        <p>As a human, I have experienced the pain of getting AI forced into literally everything I have, and it is really annoying</p>
+        <p>I think it can be good, only as a tool (eg, chatgpt) and used sparsely. Like if you use chatgpt to give you help on a peice of code, like "how do i make this text bigger", etc, then it is good. As long as you know what it is doing to your code/writing/whatever and you aren't using it to write the entire thing, then, yes, in my books it is ok!</p>
+        <p>however, when people use AI to write their entire code, and don't know how it works, and don't make any edits, then, i don't really want see "your" code.</p>
+        <p>ESPECIALLY the people who brag about their ai code. <p onclick="window.open('https://rudraxstudio.42web.io/?i=1')" id="invert" style="color: lightgoldenrodyellow;">rudra is a prime example</p></p> 
+        <p>AND the people that say "ai is the future of coding and all coders should be replaced by ai".</p>
+        <p>So sometimes, text based models are ok, but image models. image models are the worst.</p>
+        <p>they blatantly steal people's art and make people pay to use their model that they trained on their art.</p>
+        <p>they also all look terrible and most of the time, people can tell that it is ai. so if people use it for branding, it isn't going to work on anyone.</p>
+        <p>in fact, there may actually not be ANY reason to use ai except for generating funny images.</p>
+        <p>i just don't see how it can be used in the real world because EVERYONE can tell when something is ai.</p>
+        <p>it's just stupid!</p>
+        <p>The people who say AI art is their "custom" work and say that AI will replace artists are just delusional.</p>
+        <p>Big companies are investing billions of dollars into AI without actually looking at what it actually does for society.</p>
+        <p>Nothing.</p>
+        <p>Almost everyone hates AI right now.</p>
+        <p>Except that small few who are so delusional that they think the ONLY way to make art and writing is through ai. and then they hate real people for being creative.</p>
+        <p>if real artists and real writers didn't exist, then they would not have any ai tools!</p>
+        <p>So in short, I really dislike ai. It is ok if you use it either in a stupid way, or very very occasionaly. otherwise, don't brag about "your art" and "your writing" if it is just ai.</p>
     </details>
 </body>
 </html>
