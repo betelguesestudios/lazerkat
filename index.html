@@ -53,8 +53,8 @@
             list-style-type: disc;
         }
         body{
-            background-color: lightgoldenrodyellow;
-            color: #000000;
+            background-color: rgb(0, 0, 0);
+            color: lightgoldenrodyellow;
         }
         button{
             text-align: center;
@@ -100,8 +100,19 @@
         let thing = 0
         let stober = 0
         let strobeInterval = null
+
         function dothedark() {
             if (thing == 0) {
+                document.body.style.backgroundColor = "lightgoldenrodyellow";
+                document.body.style.color = "black";
+                document.querySelectorAll("p").forEach((paragraph) => {
+                    paragraph.style.color = "black";
+                });
+                thing = 1;
+                if (invert) invert.style.color = "lightgoldenrodyellow"
+                document.getElementById("dark").innerHTML = ("Dark Mode")
+            } else {
+                
                 document.body.style.backgroundColor = "black";
                 document.body.style.color = "lightgoldenrodyellow";
                 document.querySelectorAll("p").forEach((paragraph) => {
@@ -109,16 +120,7 @@
                 });
                 document.getElementById("dark").innerHTML = ("Light Mode")
                 if (invert) invert.style.color = "black"
-                thing = 1;
-            } else {
-                document.body.style.backgroundColor = "lightgoldenrodyellow";
-                document.body.style.color = "black";
-                document.querySelectorAll("p").forEach((paragraph) => {
-                    paragraph.style.color = "black";
-                });
                 thing = 0;
-                if (invert) invert.style.color = "lightgoldenrodyellow"
-                document.getElementById("dark").innerHTML = ("Dark Mode")
             }
         }
         function strobery() {
@@ -160,9 +162,18 @@
             if (strobey) {
                 strobey.addEventListener("click", strobery);
             }
-            const jobsSummary = document.getElementById("shakery");
-            if (jobsSummary && jobsSummary.parentElement && jobsSummary.parentElement.tagName === "DETAILS") {
-                const jobsDetails = jobsSummary.parentElement;
+            const button = document.getElementById('togglebutoon');
+            if (button) {
+                button.addEventListener('click', () => {
+                    const alldetails = document.querySelectorAll('details');
+                    const shouldopen = !alldetails[0]?.open;
+                    alldetails.forEach(el => el.open = shouldopen);
+                    button.textContent = shouldopen ? 'Close All' : 'Open All';
+                });
+            }
+            const jobssummary = document.getElementById("shakery");
+            if (jobssummary && jobssummary.parentElement && jobssummary.parentElement.tagName === "DETAILS") {
+                const jobsDetails = jobssummary.parentElement;
                 jobsDetails.addEventListener("toggle", () => {
                     const arrow = document.getElementById("shakilini");
                     if (arrow) {
@@ -188,8 +199,8 @@
     <strong><h1>LazerKat</h1></strong>
     <p>This is the page of lazerkat</p>
     <p onclick="window.open('http://cbsouthmetro.ddns.net:8080/mjpg/video.mjpg?timestamp=1782785412054', '_blank');">(this is a portfolio btw)</p>
-    <p><button id="dark">Dark Mode</button></p>
-    <p><button id="strobe">Start Strobe Mode (Epilepsy Warning)</button></p>
+    <p><button id="dark">Light Mode</button></p>
+    <p><button id="togglebutoon">Open All</button></p>
     <details>
     <summary style="font-size: 24px;">CAT (commonly asked things)</summary>
         <details>
