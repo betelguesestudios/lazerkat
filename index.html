@@ -93,6 +93,9 @@
         }
     </style>
     <script>
+        var i = 0
+        var txt = 'LazerKat'
+        var speed = 100
         const startdate = new Date(2025, 4, 4, 0, 0, 0).getTime();
         const msperyear = 1000 * 60 * 60 * 24 * 365.25;
         const elemp = document.getElementsByName("p")
@@ -100,6 +103,13 @@
         let thing = 0
         let stober = 0
         let strobeInterval = null
+        function typing() {
+            if (i < txt.length) {
+                document.getElementById("typere").innerHTML += txt.charAt(i)
+                i++
+                setTimeout(typing, speed)
+            }
+        }
 
         function dothedark() {
             if (thing == 0) {
@@ -154,6 +164,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", function() {
+            typing()
             const darkmodebutton = document.getElementById("dark");
             if (darkmodebutton) {
                 darkmodebutton.addEventListener("click", dothedark);
@@ -196,7 +207,7 @@
     </script>
 </head>
 <body>
-    <strong><h1>LazerKat</h1></strong>
+    <strong><h1 id="typere"></h1></strong>
     <p>This is the page of lazerkat</p>
     <p onclick="window.open('http://cbsouthmetro.ddns.net:8080/mjpg/video.mjpg?timestamp=1782785412054', '_blank');">(this is a portfolio btw)</p>
     <p><button id="dark">Light Mode</button></p>
