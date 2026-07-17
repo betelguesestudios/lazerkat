@@ -95,6 +95,18 @@
             display: inline-block;
             animation: shakering 0.5s infinite;
         }
+        .nump {
+            text-align: center;
+            font-family: "Recursive", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings:
+                "slnt" 0,
+                "CASL" 0,
+                "CRSV" 0.5,
+                "MONO" 0;
+        }
     </style>
     <script>
         var i = 0
@@ -843,9 +855,9 @@
         <summary style="font-size: 24px;">Percentage Calculator</summary>
         <p>because i don't like looking at weird displays</p>
         <p>What do you have to get to?</p>
-        <input type="number" id="yvalue" placeholder="e.g. 20" value="5000000">
+        <input class="nump" type="number" id="yvalue" placeholder="e.g. 20" value="5000000">
         <p>What are you at?</p>
-        <input type="number" id="xvalue" placeholder="e.g. 200" value="389100">
+        <input class="nump" type="number" id="xvalue" placeholder="e.g. 200" value="397200">
         <br></br>
         <button onclick="calc()">Calculate</button>
         <br></br>
