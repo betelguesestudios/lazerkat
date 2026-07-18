@@ -1,7 +1,7 @@
 # lazerkat
 My portfolio!~
 
-Please have a [look at it!](https://lazerkat.org)
+Please have a [look at it!](https://lazerkat.cc)
 
 <img width="1582" height="722" alt="Recording 2026-07-07 132212" src="https://github.com/user-attachments/assets/f1cbe923-6741-4d17-bf70-9b91b5aae004" />
 
